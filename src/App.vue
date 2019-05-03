@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <header>
+      <img class="banner" src="../public/r_and_m_header.jpg" alt="Rick and Morty logo">
+    </header>
+    <div class="body">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HomeView from '@/views/HomeView.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    
+  },
+  components: {
+    'home': HomeView
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.banner {
+  max-height: 120px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+header {
+  background-color: black;
 }
 </style>
