@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <img class="banner" src="../public/r_and_m_header.jpg" alt="Rick and Morty logo">
+      <router-link :to="{ name: 'episodes' }"><img class="banner" src="../public/r_and_m_header.jpg" alt="Rick and Morty logo"></router-link>
     </header>
     <div class="body">
       <router-view></router-view>
@@ -10,16 +10,9 @@
 </template>
 
 <script>
-import HomeView from '@/views/HomeView.vue';
 
 export default {
-  name: 'app',
-  components: {
-    
-  },
-  components: {
-    'home': HomeView
-  }
+  name: 'app'
 }
 </script>
 

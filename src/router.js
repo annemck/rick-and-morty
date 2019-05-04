@@ -4,6 +4,7 @@ import Router from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
 import EpisodesView from '@/views/EpisodesView.vue';
 import EpisodeInfo from '@/views/EpisodeInfo.vue';
+import CharacterView from '@/views/CharacterView.vue';
 
 Vue.use(Router);
 
@@ -22,7 +23,14 @@ export const router = new Router({
     {
       path: '/episode-info',
       name: 'episode-info',
-      component: EpisodeInfo
+      component: EpisodeInfo,
+      props: true
+    },
+    {
+      path: '/character',
+      name: 'character',
+      component: CharacterView,
+      props: true
     }
   ]
 });

@@ -2,26 +2,19 @@
   <div>
     <li>
       <router-link :to="{ name: 'episode-info', params: {episode} }">{{episode.name}}</router-link>
-      , &nbsp; {{episode.episode}}
+      , &nbsp;{{episode.episode}}
     </li>
   </div>
 </template>
 
 <script>
-import EpisodeInfo from '@/views/EpisodeInfo.vue';
-
 export default {
-  name: 'episode-items',
-  props: ['episode'],
-  components: {
-    'episode-info': EpisodeInfo
-  }
+  props: ['episode']
 }
 </script>
 
 <style lang="css" scoped>
 li {
   list-style: none;
-  margin-top: 5px;
 }
 </style>
