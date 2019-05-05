@@ -24,9 +24,9 @@ export default {
       episodes: [],
       urls: ['https://rickandmortyapi.com/api/episode',
       'https://rickandmortyapi.com/api/episode?page=2'],
-      'search': '',
-      'episode': null,
-      'searched': false
+      search: '',
+      episode: null,
+      searched: false
     }
   },
   methods: {

@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    <episodes-list :seasonOne="seasonOne" :seasonTwo="seasonTwo" :seasonThree="seasonThree"/>
+    <episodes-list :episodes="episodes" />
   </div>
 </template>
 
@@ -10,29 +10,12 @@ export default {
   name: 'episodes',
   data() {
     return {
-      episodes: [],
-      seasonOne: [],
-      seasonTwo: [],
-      seasonThree: [],
+      episodes: this.$parent.episodes,
       urls: ['https://rickandmortyapi.com/api/episode',
-            'https://rickandmortyapi.com/api/episode?page=2']
+      'https://rickandmortyapi.com/api/episode?page=2']
     }
   },
   methods: {
-    
-    seasonsLoop: function(){
-      this.episodes.forEach((episode) => {
-        if (episode.episode.startsWith('S01')){
-          this.seasonOne.push(episode);
-        }
-        else if (episode.episode.startsWith('S02')){
-          this.seasonTwo.push(episode);
-        }
-        else {
-          this.seasonThree.push(episode);
-        };
-      });
-    },
     
     runFetch: function(){
       const promises = this.urls.map((request) => {
@@ -45,8 +28,16 @@ export default {
           this.episodes.push(object.results);
         })
         this.episodes = this.episodes.flat();
-        this.seasonsLoop();
       })
+    },
+    
+    runChecks: function(){
+      if (this.episodes.length === 0){
+        this.runFetch();
+      }
+      else if (this.episodes.length < 30){
+        this.episodes = this.episodes.flat();
+      }
     }
     
   },
@@ -54,9 +45,10 @@ export default {
     'episodes-list': EpisodesList
   },
   mounted(){
-    this.runFetch()
+    this.runChecks()
   }
 }
+
 </script>
 
 <style lang="css" scoped>

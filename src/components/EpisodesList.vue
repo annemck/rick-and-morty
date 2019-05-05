@@ -18,9 +18,34 @@ import EpisodeItems from '@/components/EpisodeItems.vue';
 
 export default {
   name: 'episodes-list',
-  props: ['seasonOne', 'seasonTwo', 'seasonThree'],
+  props: ['episodes'],
+  data(){
+    return {
+      seasonOne: [],
+      seasonTwo: [],
+      seasonThree: []
+    }
+  },
   components: {
     'episode-items': EpisodeItems
+  },
+  methods: {
+    seasonsLoop: function(){
+      this.episodes.forEach((episode) => {
+        if (episode.episode.startsWith('S01')){
+          this.seasonOne.push(episode);
+        }
+        else if (episode.episode.startsWith('S02')){
+          this.seasonTwo.push(episode);
+        }
+        else {
+          this.seasonThree.push(episode);
+        };
+      });
+    },
+  },
+  mounted(){
+    this.seasonsLoop()
   }
 }
 </script>
