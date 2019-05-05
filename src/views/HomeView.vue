@@ -44,6 +44,7 @@ img {
   background-color: black;
   color: white;
   font-size: 16px;
+  text-align: center;
 }
 a {
   min-width: 100%;

@@ -1,5 +1,5 @@
 <template lang="html">
-  <div>
+  <div class="list">
     <ul>
       <character-episode-item v-for="episode in episodes" :episode="episode"></character-episode-item>
     </ul>
@@ -18,4 +18,15 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.list {
+  list-style: none;
+  color: white;
+}
+ul {
+  text-align: left;
+  height: 320px;
+  width: 260px;
+  border: 1px solid silver;
+  overflow: auto;
+}
 </style>

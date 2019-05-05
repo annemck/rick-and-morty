@@ -1,12 +1,13 @@
 <template lang="html">
   <div class="container">
-    <h3><b>{{episode.name}}</b></h3>
-    <p><b>Season and Episode</b></p>
-    <p>{{episode.episode}}</p>
-    <p><b>Air Date</b></p>
-    <p>{{episode.air_date}}</p>
-    <p><b>Characters In This Episode</b></p>
-    <character-list :characters="characters"></character-list>
+    <div class="details">
+      <h2><b>{{episode.name}}</b></h2>
+      <p class="heading"><b>Season and Episode</b></p>
+      <p>{{episode.episode}}</p>
+      <p class="heading"><b>Air Date</b></p>
+      <p>{{episode.air_date}}</p>
+        <character-list :characters="characters"></character-list>
+    </div>
   </div>
 </template>
 
@@ -48,6 +49,18 @@ export default {
 
 <style lang="css" scoped>
 .container {
+  text-align: center;
+  display: block;
+}
+.details {
+  display: inline-block;
+  text-align: left;
   color: white;
+}
+.heading {
+  margin-bottom: -0.5em;
+}
+p {
+  margin-bottom: 1.5em;
 }
 </style>

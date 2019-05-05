@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    <episodes-list :episodes="episodes"/>
+    <episodes-list :seasonOne="seasonOne" :seasonTwo="seasonTwo" :seasonThree="seasonThree"/>
   </div>
 </template>
 
@@ -11,12 +11,28 @@ export default {
   data() {
     return {
       episodes: [],
-      initialList: [],
+      seasonOne: [],
+      seasonTwo: [],
+      seasonThree: [],
       urls: ['https://rickandmortyapi.com/api/episode',
             'https://rickandmortyapi.com/api/episode?page=2']
     }
   },
   methods: {
+    
+    seasonsLoop: function(){
+      this.episodes.forEach((episode) => {
+        if (episode.episode.startsWith('S01')){
+          this.seasonOne.push(episode);
+        }
+        else if (episode.episode.startsWith('S02')){
+          this.seasonTwo.push(episode);
+        }
+        else {
+          this.seasonThree.push(episode);
+        };
+      });
+    },
     
     runFetch: function(){
       const promises = this.urls.map((request) => {
@@ -26,9 +42,10 @@ export default {
       Promise.all(promises)
       .then((data) => {
         data.forEach((object) => {
-          this.initialList.push(object.results);
+          this.episodes.push(object.results);
         })
-        this.episodes = this.initialList.flat();
+        this.episodes = this.episodes.flat();
+        this.seasonsLoop();
       })
     }
     

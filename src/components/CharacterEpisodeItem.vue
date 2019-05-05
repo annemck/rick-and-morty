@@ -1,8 +1,8 @@
 <template lang="html">
-  <div>
-    <li>
+  <div class="display">
+    <li class="left-align">
       <router-link :to="{ name: 'episode-info', params: {episode} }">{{episode.name}}</router-link>
-      , &nbsp;{{episode.episode}}
+      <li class="right-align">{{episode.episode}}</li>
     </li>
   </div>
 </template>
@@ -14,7 +14,21 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.right-align {
+  text-align: right;
+  margin-top: -1em;
+  padding-right: 0.5em;
+}
+.left-align {
+  text-wrap: break-word;
+  max-width: 230px;
+}
 li {
-  list-style: none;
+  margin-left: -2em;
+  margin-top: 5px;
+  color: lightgrey;
+}
+a {
+  color: silver;
 }
 </style>

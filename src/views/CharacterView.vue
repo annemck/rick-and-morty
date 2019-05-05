@@ -1,20 +1,20 @@
 <template lang="html">
   <div class="container">
-    <div class="info">
-      <h3>{{character.name}}</h3>
-      <p><b>Status:</b></p>
-      <p>{{character.status}}</p>
-      <p><b>Speicies:</b></p>
-      <p>{{character.species}}</p>
-      <p><b>Gender:</b></p>
-      <p>{{character.gender}}</p>
-      <p><b>Place of Origin:</b></p>
-      <p>{{character.origin.name}}</p>
-      <p><b>Current Location:</b></p>
-      <p>{{character.location.name}}</p>
-    </div>
     <div class="image">
       <img :src="character.image" alt="character image">
+    </div>
+    <div class="info">
+      <h2>{{character.name}}</h2>
+      <p class="heading"><b>Status:</b></p>
+      <p>{{character.status}}</p>
+      <p class="heading"><b>Speicies:</b></p>
+      <p>{{character.species}}</p>
+      <p class="heading"><b>Gender:</b></p>
+      <p>{{character.gender}}</p>
+      <p class="heading"><b>Place of Origin:</b></p>
+      <p>{{character.origin.name}}</p>
+      <p class="heading"><b>Current Location:</b></p>
+      <p>{{character.location.name}}</p>
     </div>
     <div class="episodes">
       <p><b>Episodes:</b></p>
@@ -64,9 +64,16 @@ export default {
   display: flex;
   justify-content: space-around;
   color: white;
+  padding-top: 2em;
 }
 .info {
   justify-content: flex-start;
+}
+p {
+  margin-bottom: 1.5em;
+}
+.heading {
+  margin-bottom: -0.5em;
 }
 .image {
   justify-content: flex-end;

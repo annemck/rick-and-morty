@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="">
+  <div class="list">
     <router-link :to="{ name: 'character', params: {character} }">
       <li>{{character.name}}</li>
     </router-link>
@@ -14,7 +14,11 @@ export default {
 
 <style lang="css" scoped>
 li {
-  list-style: none;
-  color: green;
+  margin-left: -2em;
+  margin-top: 5px;
+  color: lightgrey;
+}
+a {
+  color: silver;
 }
 </style>

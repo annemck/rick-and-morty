@@ -24,7 +24,6 @@ export default {
 .right-align {
   text-align: right;
   margin-top: -1em;
-
 }
 li {
   list-style: none;
