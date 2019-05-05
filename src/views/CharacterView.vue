@@ -60,23 +60,23 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.container {
-  display: flex;
-  justify-content: space-around;
-  color: white;
-  padding-top: 2em;
-}
-.info {
-  justify-content: flex-start;
-}
-p {
-  margin-bottom: 1.5em;
-}
-.heading {
-  margin-bottom: -0.5em;
-}
-.image {
-  justify-content: flex-end;
-  padding-top: 3em;
-}
+  .container {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    padding-top: 2em;
+  }
+  .info {
+    justify-content: flex-start;
+  }
+  p {
+    margin-bottom: 1.5em;
+  }
+  .heading {
+    margin-bottom: -0.5em;
+  }
+  .img {
+    justify-content: flex-end;
+    padding-top: 3em;
+  }
 </style>
