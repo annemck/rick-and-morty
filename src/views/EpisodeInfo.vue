@@ -42,7 +42,12 @@ export default {
     }
   },
   mounted(){
-    this.runFetch()
+    this.runFetch(),
+    checkEpisode = function(){
+      if (!this.episode){
+        this.$router.push('episodes');
+      }
+    }
   }
 }
 </script>
