@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="all">
     <header>
       <router-link :to="{ name: 'episodes' }"><img class="banner" src="../public/r_and_m_header.jpg" alt="Rick and Morty logo"></router-link>
     </header>
@@ -23,7 +23,11 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
-header {
+.all {
+  min-height: 100%;
   background-color: black;
+}
+.body {
+  min-height: 100vh;
 }
 </style>

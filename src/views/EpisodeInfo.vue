@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="">
+  <div class="container">
     <h3><b>{{episode.name}}</b></h3>
     <p><b>Season and Episode</b></p>
     <p>{{episode.episode}}</p>
@@ -47,4 +47,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.container {
+  color: white;
+}
 </style>

@@ -63,6 +63,7 @@ export default {
 .container {
   display: flex;
   justify-content: space-around;
+  color: white;
 }
 .info {
   justify-content: flex-start;

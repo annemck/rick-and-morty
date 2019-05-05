@@ -27,12 +27,16 @@ img {
   transition: .2s ease;
   opacity: 0;
   position: absolute;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  padding-left: 4%;
+  padding-right: 4%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
-.container:hover .middle {
+.middle:hover {
   opacity: 1;
 }
 .hover-text {
@@ -40,6 +44,10 @@ img {
   background-color: black;
   color: white;
   font-size: 16px;
-  padding: 16px 32px;
+}
+a {
+  min-width: 100%;
+  font-size: 30px;
+  color: white;
 }
 </style>

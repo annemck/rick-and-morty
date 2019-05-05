@@ -1,8 +1,9 @@
 <template lang="html">
   <div>
     <li>
-      <router-link :to="{ name: 'episode-info', params: {episode} }">{{episode.name}}</router-link>
-      , &nbsp; {{episode.episode}}
+      <router-link :to="{ name: 'episode-info', params: {episode} }">
+        {{episode.name}}</router-link>
+        <li class="right-align">{{episode.episode}}</li>
     </li>
   </div>
 </template>
@@ -20,8 +21,18 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.right-align {
+  text-align: right;
+  margin-top: -1em;
+
+}
 li {
   list-style: none;
   margin-top: 5px;
+  color: lightgrey;
+  min-width: 20.5em;
+}
+a {
+  color: silver;
 }
 </style>

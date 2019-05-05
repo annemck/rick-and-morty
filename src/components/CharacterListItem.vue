@@ -15,5 +15,6 @@ export default {
 <style lang="css" scoped>
 li {
   list-style: none;
+  color: green;
 }
 </style>
