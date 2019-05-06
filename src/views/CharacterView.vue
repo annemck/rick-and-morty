@@ -75,7 +75,7 @@ export default {
   .heading {
     margin-bottom: -0.5em;
   }
-  .img {
+  img {
     justify-content: flex-end;
     padding-top: 3em;
   }
