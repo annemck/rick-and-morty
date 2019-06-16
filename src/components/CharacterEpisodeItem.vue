@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="display">
     <li class="left-align">
-      <router-link :to="{ name: 'episode-info', params: {episode} }">{{episode.name}}</router-link>
+      <router-link :to="{ name: 'episode-info', params: {id: episode.id, episode: episode} }">{{episode.name}}</router-link>
       <li class="right-align">{{episode.episode}}</li>
     </li>
   </div>

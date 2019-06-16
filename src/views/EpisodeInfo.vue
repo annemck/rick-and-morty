@@ -6,7 +6,7 @@
       <p>{{episode.episode}}</p>
       <p class="heading"><b>Air Date</b></p>
       <p>{{episode.air_date}}</p>
-        <character-list :characters="characters"></character-list>
+      <character-list :characters="characters"></character-list>
     </div>
   </div>
 </template>
@@ -39,15 +39,26 @@ export default {
         this.characters = this.initialArray.flat();
         this.initialArray = [];
       })
+    },
+    
+    runEpisodeFetch: function(){
+      fetch(`https://rickandmortyapi.com/api/episode/${id}`)
+      .then(response => response.json())
+      .then(data => {
+        this.episode = data;
+      })
+    },
+    
+    checkEpisode: function(){
+      if (!this.episode){
+        this.runEpisodeFetch();
+      }
     }
   },
   mounted(){
     this.runFetch(),
-    checkEpisode = function(){
-      if (!this.episode){
-        this.$router.push('episodes');
-      }
-    }
+    
+    this.checkEpisode()
   }
 }
 </script>
