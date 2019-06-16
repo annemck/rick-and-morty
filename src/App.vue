@@ -4,7 +4,7 @@
       <router-link :to="{ name: 'episodes' }"><img class="banner" src="../public/r_and_m_header.jpg" alt="Rick and Morty logo"></router-link>
       <form v-on:submit.prevent class="search" v-if="$route.path !== '/'">
         <input type="text" v-model="search" placeholder="Search For Episode" v-on:keyup="searchDetails">
-        <router-link :to="{ name: 'episode-info', params: {episode} }">
+        <router-link v-if="episode != null" :to="{ name: 'episode-info', params: {id: episode.id, episode: episode} }">
           <button v-on:click="clearBar">Search</button>
         </router-link>
       </form>

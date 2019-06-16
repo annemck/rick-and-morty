@@ -21,7 +21,7 @@ export const router = new Router({
       component: EpisodesView
     },
     {
-      path: '/episode-info',
+      path: '/episodes/:id',
       name: 'episode-info',
       component: EpisodeInfo,
       props: true

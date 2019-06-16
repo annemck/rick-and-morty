@@ -15,7 +15,7 @@
 import CharacterList from '@/components/CharacterList.vue';
 
 export default {
-  props: ['episode'],
+  props: ['id', 'episode'],
   data(){
     return {
       initialArray: [],
