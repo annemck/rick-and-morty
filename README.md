@@ -1,4 +1,7 @@
-# rick_and_morty
+# Rick and Morty
+
+This was a CodeClan week 7 homework to practice using Vue and making API requests to get JSON data.
+
 
 ## Project setup
 ```
